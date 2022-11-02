@@ -1,15 +1,16 @@
 .accordion {
 	font-family: 'DM Sans', sans-serif;
+	margin-bottom: 100px;
 	&__title{
 		color: #003146;
 		font-size: 70px;
-		width: 1170px;
+		max-width: 1170px;
 		text-align: center;
 		margin: 0 auto 100px;
 	}
 	&__wrapper {
-		width: 1440px;
-		height: 500px;
+		max-width: 1440px;
+		height: 400px;
 		margin: 0 auto 0;
 		padding: 0 60px;
 		display: flex;
@@ -74,16 +75,11 @@
 	&__images{
 		position: relative;
 		width: 50%;
+		height: 400px;
+		object-fit: scale-down;
 	}
 	&__img{
-		position: absolute;
-		top: 0px;
-		left: 0px;
-		display: block;
-		width: 800px;
-		height: 408px;
-		opacity: 0;
-		transition: .3s;
+		width: 100%;
 		border-radius: 20px;
 		overflow: hidden;
 	}
@@ -122,4 +118,23 @@
 	max-width: 1440px;
 	margin: 0 auto;
 	padding: 0 60px;
+}
+
+@media (max-width: 1000px) {
+	.accordion {
+		&__wrapper {
+			flex-direction: column-reverse;
+			height: auto;
+			padding: 0 20px;
+		}
+		&__paragraphs-wrapper {
+			width: 100%;
+
+		}
+		&__images{
+			width: 100%;
+			height: auto;
+			margin-bottom: 50px;
+		}
+	}
 }

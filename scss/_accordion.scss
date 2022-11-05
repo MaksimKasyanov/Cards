@@ -72,13 +72,13 @@
 			transition: all .3s;
 		}
 	}
-	&__images{
+	&__graphic-wrapper{
 		position: relative;
 		width: 50%;
 		height: 400px;
 		object-fit: scale-down;
 	}
-	&__img{
+	&__graphic{
 		width: 100%;
 		border-radius: 20px;
 		overflow: hidden;
@@ -111,8 +111,16 @@
 			}
 		}
 	}
+	.title{
+		width: 800px;
+	}
 }
 
+.accordion__differences{
+	.accordion__paragraphs-wrapper{
+		width: auto;
+	}
+}
 .container{
 	width: 100%;
 	max-width: 1440px;
@@ -122,19 +130,67 @@
 
 @media (max-width: 1000px) {
 	.accordion {
+		margin-bottom: 50px;
 		&__wrapper {
 			flex-direction: column-reverse;
 			height: auto;
 			padding: 0 20px;
 		}
 		&__paragraphs-wrapper {
-			width: 100%;
-
+			width: auto;
+			min-height: 300px;
+			margin-left: 20px;
 		}
-		&__images{
+		&__paragraph-title {
+			font-weight: 700;
+			font-size: 24px;
+			line-height: 31px;
+		}
+		&__paragraph-text {
+			width: 100%;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 27px;
+			padding: 0px 20px 40px 20px;
+		}
+		&__graphic-wrapper{
 			width: 100%;
 			height: auto;
 			margin-bottom: 50px;
+		}
+		&__paragraph-active{
+			&:last-child span::before{
+				background-color: #003146;
+			}
+			.accordion {
+				&__paragraph-text {
+					padding: 0px 20px 0px 26px;
+					transition-delay: .15s;
+					margin: 15px 0;
+				}
+			}
+		}
+		.title{
+			width: 300px;
+		}
+	}
+	.accordion__differences{
+		.accordion {
+			&__wrapper {
+				flex-direction: column;
+			}
+		}
+		.accordion__paragraphs-wrapper{
+			
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	.accordion {
+		&__paragraphs-wrapper {
+			width: auto;
+			min-height: 350px;
 		}
 	}
 }

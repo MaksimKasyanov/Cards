@@ -147,7 +147,7 @@ let cardsRight = new Swiper(".cards__right", {
 	loop: true,
 	cardsEffect: {
 		slideShadows: false,
-		perSlideRotate: 4,
+		perSlideRotate: 6,
 		perSlideOffset: 3,
 	},
 });

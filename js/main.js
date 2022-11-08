@@ -32,58 +32,60 @@ if (window.innerWidth > 1000) {
 }
 
 // ! Scroll ainmated paragraphs
-const relocationParagraphs = document.querySelectorAll('.accordion__relocation .accordion__paragraph');
-const differencesParagraphs = document.querySelectorAll('.accordion__differences .accordion__paragraph');
-const accordionImages = document.querySelectorAll('.accordion__img');
-const accordionRelocation = document.querySelector('.accordion__relocation .accordion__paragraphs-wrapper');
-const accordionDifferences = document.querySelector('.accordion__differences .accordion__paragraphs-wrapper');
-window.addEventListener('scroll', checkParagraphs);
+	const relocationParagraphs = document.querySelectorAll('.accordion__relocation .accordion__paragraph');
+	const differencesParagraphs = document.querySelectorAll('.accordion__differences .accordion__paragraph');
+	const accordionImages = document.querySelectorAll('.accordion__img');
+	const accordionRelocation = document.querySelector('.accordion__relocation .accordion__paragraphs-wrapper');
+	const accordionDifferences = document.querySelector('.accordion__differences .accordion__paragraphs-wrapper');
+	window.addEventListener('scroll', checkParagraphs);
+	
+	function checkParagraphs() {
+		const scrollTrigger = window.innerHeight;
+		relocationParagraphs.forEach((el) => {
+			const blockTop = accordionRelocation.getBoundingClientRect().top;
+			if (blockTop < (scrollTrigger / 10) * 8) {
+				relocationParagraphs.forEach((el) =>
+					el.classList.remove('accordion__paragraph-active')
+				);
+				relocationParagraphs[0].classList.add('accordion__paragraph-active');
+			}
+			if (blockTop < (scrollTrigger / 10) * 6) {
+				relocationParagraphs.forEach((el) =>
+					el.classList.remove('accordion__paragraph-active')
+				);
+				relocationParagraphs[1].classList.add('accordion__paragraph-active');
+			}
+			if (blockTop < (scrollTrigger / 10) * 4) {
+				relocationParagraphs.forEach((el) =>
+					el.classList.remove('accordion__paragraph-active')
+				);
+				relocationParagraphs[2].classList.add('accordion__paragraph-active');
+			}
+		});
+		differencesParagraphs.forEach((el) => {
+			const blockTop = accordionDifferences.getBoundingClientRect().top;
+			if (blockTop < (scrollTrigger / 10) * 8) {
+				differencesParagraphs.forEach((el) =>
+					el.classList.remove('accordion__paragraph-active')
+				);
+				differencesParagraphs[0].classList.add('accordion__paragraph-active');
+			}
+			if (blockTop < (scrollTrigger / 10) * 6) {
+				differencesParagraphs.forEach((el) =>
+					el.classList.remove('accordion__paragraph-active')
+				);
+				differencesParagraphs[1].classList.add('accordion__paragraph-active');
+			}
+			if (blockTop < (scrollTrigger / 10) * 4) {
+				differencesParagraphs.forEach((el) =>
+					el.classList.remove('accordion__paragraph-active')
+				);
+				differencesParagraphs[2].classList.add('accordion__paragraph-active');
+			}
+		});
+	}
 
-function checkParagraphs() {
-	const scrollTrigger = window.innerHeight;
-	relocationParagraphs.forEach((el) => {
-		const blockTop = accordionRelocation.getBoundingClientRect().top;
-		if (blockTop < (scrollTrigger / 10) * 8) {
-			relocationParagraphs.forEach((el) =>
-				el.classList.remove('accordion__paragraph-active')
-			);
-			relocationParagraphs[0].classList.add('accordion__paragraph-active');
-		}
-		if (blockTop < (scrollTrigger / 10) * 6) {
-			relocationParagraphs.forEach((el) =>
-				el.classList.remove('accordion__paragraph-active')
-			);
-			relocationParagraphs[1].classList.add('accordion__paragraph-active');
-		}
-		if (blockTop < (scrollTrigger / 10) * 4) {
-			relocationParagraphs.forEach((el) =>
-				el.classList.remove('accordion__paragraph-active')
-			);
-			relocationParagraphs[2].classList.add('accordion__paragraph-active');
-		}
-	});
-	differencesParagraphs.forEach((el) => {
-		const blockTop = accordionDifferences.getBoundingClientRect().top;
-		if (blockTop < (scrollTrigger / 10) * 8) {
-			differencesParagraphs.forEach((el) =>
-				el.classList.remove('accordion__paragraph-active')
-			);
-			differencesParagraphs[0].classList.add('accordion__paragraph-active');
-		}
-		if (blockTop < (scrollTrigger / 10) * 6) {
-			differencesParagraphs.forEach((el) =>
-				el.classList.remove('accordion__paragraph-active')
-			);
-			differencesParagraphs[1].classList.add('accordion__paragraph-active');
-		}
-		if (blockTop < (scrollTrigger / 10) * 4) {
-			differencesParagraphs.forEach((el) =>
-				el.classList.remove('accordion__paragraph-active')
-			);
-			differencesParagraphs[2].classList.add('accordion__paragraph-active');
-		}
-	});
-}
+
 
 // ! Slider carousel
 
@@ -151,5 +153,3 @@ let cardsRight = new Swiper(".cards__right", {
 	},
 });
 
-cardsLeft.controller.control = cardsRight;
-cardsRight.controller.control = cardsLeft;

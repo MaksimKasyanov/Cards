@@ -131,6 +131,25 @@
 @media (max-width: 1000px) {
 	.accordion {
 		margin-bottom: 50px;
+		&__paragraph-title {
+			color: #5E7C89;
+			
+			&::before{
+				background-color: #5E7C89;
+			}
+		}
+		&__paragraph-text {
+			padding: 0px 0px 0px 40px;
+			transition-delay: 0s;
+			max-height: 200px;
+			margin: 15px 0;
+			color: #5E7C89;
+			
+			&::before{
+				height: 100%;
+				color: #5E7C89;
+			}
+		}
 		&__wrapper {
 			flex-direction: column-reverse;
 			height: auto;
@@ -145,17 +164,19 @@
 			font-weight: 700;
 			font-size: 24px;
 			line-height: 31px;
-			transition: all 1.75s;
+			transition: all .75s;
 		}
 		&__paragraph-text {
 			width: 100%;
 			font-weight: 400;
 			font-size: 16px;
 			line-height: 27px;
-			padding: 0px 20px 40px 26px;
-			transition: all 1.75s;
+			padding: 0px 20px 0px 26px;
+			transition: all .75s;
+			color: #5E7C89;
 			&::before{
-				transition: all 1.75s;
+				transition: all .75s;
+				background-color: #5E7C89;
 			}
 		}
 		&__graphic-wrapper{
@@ -164,7 +185,7 @@
 			margin-bottom: 50px;
 		}
 		&__paragraph-active{
-			transition: all 1.75s;
+			transition: all .75s;
 			&:last-child span::before{
 				background-color: #003146;
 			}
@@ -173,6 +194,9 @@
 					padding: 0px 20px 0px 26px;
 					transition-delay: 0s;
 					margin: 15px 0;
+					&::before{
+						transition: all .75s;
+					}
 				}
 			}
 		}
@@ -185,9 +209,6 @@
 			&__wrapper {
 				flex-direction: column;
 			}
-		}
-		.accordion__paragraphs-wrapper{
-			
 		}
 	}
 }

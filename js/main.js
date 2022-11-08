@@ -41,7 +41,6 @@ window.addEventListener('scroll', checkParagraphs);
 
 function checkParagraphs() {
 	const scrollTrigger = window.innerHeight;
-	console.log(relocationParagraphs, differencesParagraphs)
 	relocationParagraphs.forEach((el) => {
 		const blockTop = accordionRelocation.getBoundingClientRect().top;
 		if (blockTop < (scrollTrigger / 10) * 8) {

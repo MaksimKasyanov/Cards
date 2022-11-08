@@ -1,4 +1,4 @@
-// !Expanding cards
+// !Expanding individuals
 
 if (window.innerWidth > 1000) {
 	const cards = document.querySelectorAll('.expander__immigration .expander__card');
@@ -32,60 +32,58 @@ if (window.innerWidth > 1000) {
 }
 
 // ! Scroll ainmated paragraphs
-	const relocationParagraphs = document.querySelectorAll('.accordion__relocation .accordion__paragraph');
-	const differencesParagraphs = document.querySelectorAll('.accordion__differences .accordion__paragraph');
-	const accordionImages = document.querySelectorAll('.accordion__img');
-	const accordionRelocation = document.querySelector('.accordion__relocation .accordion__paragraphs-wrapper');
-	const accordionDifferences = document.querySelector('.accordion__differences .accordion__paragraphs-wrapper');
-	window.addEventListener('scroll', checkParagraphs);
-	
-	function checkParagraphs() {
-		const scrollTrigger = window.innerHeight;
-		relocationParagraphs.forEach((el) => {
-			const blockTop = accordionRelocation.getBoundingClientRect().top;
-			if (blockTop < (scrollTrigger / 10) * 8) {
-				relocationParagraphs.forEach((el) =>
-					el.classList.remove('accordion__paragraph-active')
-				);
-				relocationParagraphs[0].classList.add('accordion__paragraph-active');
-			}
-			if (blockTop < (scrollTrigger / 10) * 6) {
-				relocationParagraphs.forEach((el) =>
-					el.classList.remove('accordion__paragraph-active')
-				);
-				relocationParagraphs[1].classList.add('accordion__paragraph-active');
-			}
-			if (blockTop < (scrollTrigger / 10) * 4) {
-				relocationParagraphs.forEach((el) =>
-					el.classList.remove('accordion__paragraph-active')
-				);
-				relocationParagraphs[2].classList.add('accordion__paragraph-active');
-			}
-		});
-		differencesParagraphs.forEach((el) => {
-			const blockTop = accordionDifferences.getBoundingClientRect().top;
-			if (blockTop < (scrollTrigger / 10) * 8) {
-				differencesParagraphs.forEach((el) =>
-					el.classList.remove('accordion__paragraph-active')
-				);
-				differencesParagraphs[0].classList.add('accordion__paragraph-active');
-			}
-			if (blockTop < (scrollTrigger / 10) * 6) {
-				differencesParagraphs.forEach((el) =>
-					el.classList.remove('accordion__paragraph-active')
-				);
-				differencesParagraphs[1].classList.add('accordion__paragraph-active');
-			}
-			if (blockTop < (scrollTrigger / 10) * 4) {
-				differencesParagraphs.forEach((el) =>
-					el.classList.remove('accordion__paragraph-active')
-				);
-				differencesParagraphs[2].classList.add('accordion__paragraph-active');
-			}
-		});
-	}
+const relocationParagraphs = document.querySelectorAll('.accordion__relocation .accordion__paragraph');
+const differencesParagraphs = document.querySelectorAll('.accordion__differences .accordion__paragraph');
+const accordionImages = document.querySelectorAll('.accordion__img');
+const accordionRelocation = document.querySelector('.accordion__relocation .accordion__paragraphs-wrapper');
+const accordionDifferences = document.querySelector('.accordion__differences .accordion__paragraphs-wrapper');
+window.addEventListener('scroll', checkParagraphs);
 
-
+function checkParagraphs() {
+	const scrollTrigger = window.innerHeight;
+	relocationParagraphs.forEach((el) => {
+		const blockTop = accordionRelocation.getBoundingClientRect().top;
+		if (blockTop < (scrollTrigger / 10) * 8) {
+			relocationParagraphs.forEach((el) =>
+				el.classList.remove('accordion__paragraph-active')
+			);
+			relocationParagraphs[0].classList.add('accordion__paragraph-active');
+		}
+		if (blockTop < (scrollTrigger / 10) * 6) {
+			relocationParagraphs.forEach((el) =>
+				el.classList.remove('accordion__paragraph-active')
+			);
+			relocationParagraphs[1].classList.add('accordion__paragraph-active');
+		}
+		if (blockTop < (scrollTrigger / 10) * 4) {
+			relocationParagraphs.forEach((el) =>
+				el.classList.remove('accordion__paragraph-active')
+			);
+			relocationParagraphs[2].classList.add('accordion__paragraph-active');
+		}
+	});
+	differencesParagraphs.forEach((el) => {
+		const blockTop = accordionDifferences.getBoundingClientRect().top;
+		if (blockTop < (scrollTrigger / 10) * 8) {
+			differencesParagraphs.forEach((el) =>
+				el.classList.remove('accordion__paragraph-active')
+			);
+			differencesParagraphs[0].classList.add('accordion__paragraph-active');
+		}
+		if (blockTop < (scrollTrigger / 10) * 6) {
+			differencesParagraphs.forEach((el) =>
+				el.classList.remove('accordion__paragraph-active')
+			);
+			differencesParagraphs[1].classList.add('accordion__paragraph-active');
+		}
+		if (blockTop < (scrollTrigger / 10) * 4) {
+			differencesParagraphs.forEach((el) =>
+				el.classList.remove('accordion__paragraph-active')
+			);
+			differencesParagraphs[2].classList.add('accordion__paragraph-active');
+		}
+	});
+}
 
 // ! Slider carousel
 
@@ -126,23 +124,23 @@ let carousel = new Swiper('.carousel', {
 	},
 });
 
-// ! Slider cards
-let cardsLeft = new Swiper(".cards__left", {
-	wrapperClass: 'cards__left-wrapper',
-	slideClass: 'cards__left-slide',
-	slideActiveClass: 'cards__left-active',
+// ! Slider individuals
+let managersLeft = new Swiper(".managers__left", {
+	wrapperClass: 'managers__left-wrapper',
+	slideClass: 'managers__left-slide',
+	slideActiveClass: 'managers__left-active',
 	effect: "fade",
 	grabCursor: false,
 	loop: true,
 	navigation: {
-		nextEl: ".cards__next",
-		prevEl: ".cards__prev",
+		nextEl: ".managers__next",
+		prevEl: ".managers__prev",
 	},
 });
 
-let cardsRight = new Swiper(".cards__right", {
-	wrapperClass: 'cards__right-wrapper',
-	slideClass: 'cards__right-slide',
+let managersRight = new Swiper(".managers__right", {
+	wrapperClass: 'managers__right-wrapper',
+	slideClass: 'managers__right-slide',
 	effect: "cards",
 	grabCursor: true,
 	loop: true,
@@ -153,3 +151,36 @@ let cardsRight = new Swiper(".cards__right", {
 	},
 });
 
+managersLeft.controller.control = managersRight;
+managersRight.controller.control = managersLeft;
+
+
+// ! Slider individuals
+let individualsRight = new Swiper(".individuals__right", {
+	wrapperClass: 'individuals__right-wrapper',
+	slideClass: 'individuals__right-slide',
+	slideActiveClass: 'individuals__right-active',
+	effect: "fade",
+	grabCursor: false,
+	loop: true,
+	navigation: {
+		nextEl: ".individuals__next",
+		prevEl: ".individuals__prev",
+	},
+});
+
+let individualsLeft = new Swiper(".individuals__left", {
+	wrapperClass: 'individuals__left-wrapper',
+	slideClass: 'individuals__left-slide',
+	effect: "cards",
+	grabCursor: true,
+	loop: true,
+	cardsEffect: {
+		slideShadows: false,
+		perSlideRotate: 6,
+		perSlideOffset: 3,
+	},
+});
+
+individualsLeft.controller.control = individualsRight;
+individualsRight.controller.control = individualsLeft;

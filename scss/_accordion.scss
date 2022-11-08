@@ -1,6 +1,5 @@
 .accordion {
 	font-family: 'DM Sans', sans-serif;
-	margin-bottom: 100px;
 	&__title{
 		color: #003146;
 		font-size: 70px;
@@ -74,9 +73,10 @@
 	}
 	&__graphic-wrapper{
 		position: relative;
-		width: 50%;
+		width: 60%;
 		height: 400px;
 		object-fit: scale-down;
+		border-radius: 40px;
 	}
 	&__graphic{
 		width: 100%;
@@ -130,7 +130,11 @@
 
 @media (max-width: 1000px) {
 	.accordion {
-		margin-bottom: 50px;
+		&__paragraph {
+			&:last-child span::before{
+				background-color: #5E7C89;
+			}
+		}
 		&__paragraph-title {
 			color: #5E7C89;
 			
@@ -183,6 +187,7 @@
 			width: 100%;
 			height: auto;
 			margin-bottom: 50px;
+			border-radius: 12px
 		}
 		&__paragraph-active{
 			transition: all .75s;

@@ -1,11 +1,11 @@
-
 .managers {
 	position: relative;
 	display: flex;
-	padding: 20px 140px;
+	padding: 20px 60px;
 	max-width: 1440px;
 	height: 595px;
-	margin: 0 auto 100px;
+	margin-left: auto;
+	margin-right: auto;
 	&__left {
 		display: flex;
 		margin: 0;
@@ -108,15 +108,16 @@
 		object-position: center center;
 	}
 }
-@media (max-width: 1240px) {
-}
 @media (max-width: 1000px) {
 	.managers {
 		height: auto;
 		flex-direction: column-reverse;
-		padding: 0 40px 70px;
+		padding: 0 40px 0px;
+		&__left{
+			padding-bottom: 80px;
+		}
 		&__left-slide-inner {
-			padding-top: 50px;
+			padding-top: 0px;
 		}
 		&__left-subtitle {
 			width: auto;
@@ -132,7 +133,7 @@
 			width: 240px;
 			height: 350px;
 			min-height: 350px;
-			margin: 0 auto;
+			margin: 0 auto 30px;
 		}
 		&__arrows {
 			left: 50%;

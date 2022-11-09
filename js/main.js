@@ -1,4 +1,4 @@
-// !Expanding individuals
+// !Expanding randomname
 
 if (window.innerWidth > 1000) {
 	const cards = document.querySelectorAll('.expander__immigration .expander__card');
@@ -124,7 +124,7 @@ let carousel = new Swiper('.carousel', {
 	},
 });
 
-// ! Slider individuals
+// ! Slider randomname
 let managersLeft = new Swiper(".managers__left", {
 	wrapperClass: 'managers__left-wrapper',
 	slideClass: 'managers__left-slide',
@@ -155,7 +155,8 @@ managersLeft.controller.control = managersRight;
 managersRight.controller.control = managersLeft;
 
 
-// ! Slider individuals
+// ! Slider randomname
+
 let individualsRight = new Swiper(".individuals__right", {
 	wrapperClass: 'individuals__right-wrapper',
 	slideClass: 'individuals__right-slide',
@@ -184,3 +185,32 @@ let individualsLeft = new Swiper(".individuals__left", {
 
 individualsLeft.controller.control = individualsRight;
 individualsRight.controller.control = individualsLeft;
+
+let randomnameRight = new Swiper(".randomname__right", {
+	wrapperClass: 'randomname__right-wrapper',
+	slideClass: 'randomname__right-slide',
+	slideActiveClass: 'randomname__right-active',
+	effect: "fade",
+	grabCursor: false,
+	loop: true,
+	navigation: {
+		nextEl: ".randomname__next",
+		prevEl: ".randomname__prev",
+	},
+});
+
+let randomnameLeft = new Swiper(".randomname__left", {
+	wrapperClass: 'randomname__left-wrapper',
+	slideClass: 'randomname__left-slide',
+	effect: "cards",
+	grabCursor: true,
+	loop: true,
+	cardsEffect: {
+		slideShadows: false,
+		perSlideRotate: 6,
+		perSlideOffset: 3,
+	},
+});
+
+randomnameLeft.controller.control = randomnameRight;
+randomnameRight.controller.control = randomnameLeft;

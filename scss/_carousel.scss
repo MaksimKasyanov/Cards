@@ -1,6 +1,7 @@
 .carousel {
 	position: relative;
 	width: 100%;
+	max-width: 100%;
 	padding: 20px 0 20px;
 	font-family: 'DM Sans', sans-serif;
 	overflow: hidden;
@@ -9,6 +10,7 @@
 	}
 	&__section{
 		position: relative;
+		max-width: 100%;
 	}
 	&__slide{
 		position: relative;
@@ -138,7 +140,7 @@
 
 
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
 	.carousel__nav{
 		display: none;
 	}

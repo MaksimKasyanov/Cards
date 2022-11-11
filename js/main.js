@@ -124,26 +124,57 @@ let carousel = new Swiper('.carousel', {
 	},
 });
 
-// ! Slider randomname
-let managersLeft = new Swiper(".managers__left", {
-	wrapperClass: 'managers__left-wrapper',
-	slideClass: 'managers__left-slide',
-	slideActiveClass: 'managers__left-active',
+// ! Slider managers
+let managersInfo = new Swiper(".managers .slider-info", {
+	wrapperClass: 'slider-info__wrapper',
+	slideClass: 'slider-info__slide',
+	slideActiveClass: 'slider-info__slide-active',
 	effect: "fade",
-	grabCursor: false,
-	loop: true,
+	loop: false,
 	navigation: {
-		nextEl: ".managers__next",
-		prevEl: ".managers__prev",
+		prevEl: ".managers .slider-arrows__prev",
+		nextEl: ".managers .slider-arrows__next",
+		disabledClass: 'slider-arrows__disabled',
 	},
 });
 
-let managersRight = new Swiper(".managers__right", {
-	wrapperClass: 'managers__right-wrapper',
-	slideClass: 'managers__right-slide',
+let managersCards = new Swiper(".managers .slider-cards", {
+	wrapperClass: 'slider-cards__wrapper',
+	slideClass: 'slider-cards__slide',
 	effect: "cards",
 	grabCursor: true,
-	loop: true,
+	loop: false,
+	cardsEffect: {
+		slideShadows: false,
+		perSlideRotate: 6,
+		perSlideOffset: 3,
+		
+	},
+});
+
+managersInfo.controller.control = managersCards;
+managersCards.controller.control = managersInfo;
+
+// ! Slider individuals
+let individualsInfo = new Swiper(".individuals .slider-info", {
+	wrapperClass: 'slider-info__wrapper',
+	slideClass: 'slider-info__slide',
+	slideActiveClass: 'slider-info__slide-active',
+	effect: "fade",
+	loop: false,
+	navigation: {
+		prevEl: ".individuals .slider-arrows__prev",
+		nextEl: ".individuals .slider-arrows__next",
+		disabledClass: 'slider-arrows__disabled',
+	},
+});
+
+let individualsCards = new Swiper(".individuals .slider-cards", {
+	wrapperClass: 'slider-cards__wrapper',
+	slideClass: 'slider-cards__slide',
+	effect: "cards",
+	grabCursor: true,
+	loop: false,
 	cardsEffect: {
 		slideShadows: false,
 		perSlideRotate: 6,
@@ -151,66 +182,7 @@ let managersRight = new Swiper(".managers__right", {
 	},
 });
 
-managersLeft.controller.control = managersRight;
-managersRight.controller.control = managersLeft;
+individualsInfo.controller.control = individualsCards;
+individualsCards.controller.control = individualsInfo;
 
 
-// ! Slider randomname
-
-let individualsRight = new Swiper(".individuals__right", {
-	wrapperClass: 'individuals__right-wrapper',
-	slideClass: 'individuals__right-slide',
-	slideActiveClass: 'individuals__right-active',
-	effect: "fade",
-	grabCursor: false,
-	loop: true,
-	navigation: {
-		nextEl: ".individuals__next",
-		prevEl: ".individuals__prev",
-	},
-});
-
-let individualsLeft = new Swiper(".individuals__left", {
-	wrapperClass: 'individuals__left-wrapper',
-	slideClass: 'individuals__left-slide',
-	effect: "cards",
-	grabCursor: true,
-	loop: true,
-	cardsEffect: {
-		slideShadows: false,
-		perSlideRotate: 6,
-		perSlideOffset: 3,
-	},
-});
-
-individualsLeft.controller.control = individualsRight;
-individualsRight.controller.control = individualsLeft;
-
-let randomnameRight = new Swiper(".randomname__right", {
-	wrapperClass: 'randomname__right-wrapper',
-	slideClass: 'randomname__right-slide',
-	slideActiveClass: 'randomname__right-active',
-	effect: "fade",
-	grabCursor: false,
-	loop: true,
-	navigation: {
-		nextEl: ".randomname__next",
-		prevEl: ".randomname__prev",
-	},
-});
-
-let randomnameLeft = new Swiper(".randomname__left", {
-	wrapperClass: 'randomname__left-wrapper',
-	slideClass: 'randomname__left-slide',
-	effect: "cards",
-	grabCursor: true,
-	loop: true,
-	cardsEffect: {
-		slideShadows: false,
-		perSlideRotate: 6,
-		perSlideOffset: 3,
-	},
-});
-
-randomnameLeft.controller.control = randomnameRight;
-randomnameRight.controller.control = randomnameLeft;

@@ -5,7 +5,8 @@ body{
 
 
 section{
-	margin-bottom: 100px;
+	max-width: 1164px;
+	margin: 0 auto 100px;
 }
 
 .title {
@@ -30,36 +31,36 @@ section{
 	color: #000000;
 	margin: 0 auto 90px;
 }
+
 .slider-title{
+	position: relative;
+	z-index: 2;
+
+	color: #003146;
 	font-family: 'DM Sans';
-	width: 1100px;
 	font-style: normal;
 	font-weight: 700;
 	font-size: 60px;
 	line-height: 80px;
-	text-align: center;
-	color: #003146;
-}
-.slider-title{
-	position: relative;
-	z-index: 2;
 	text-align: left;
+
+
 	width: 100%;
-	max-width: 1440px;
-	padding: 0 60px;
+	max-width: 1164px;;
 	margin-bottom: -50px;
 	padding-top: 70px;
 	&::before{
 		content:"For HR Managers";
 		position: absolute;
-		left: 60px;
+		left: 0px;
 		top: 0px;
 		font-weight: 500;
 		font-size: 30px;
 		line-height: 80px;
 	}
 }
-@media (max-width: 1000px) {
+
+@media (max-width: 1024px) {
 	section{
 		margin-bottom: 50px;
 	}

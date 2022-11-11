@@ -1,19 +1,20 @@
 .accordion {
 	font-family: 'DM Sans', sans-serif;
+	&__wrapper {
+		max-width: 1204px;
+		height: 400px;
+		padding: 0 20px;
+		margin: 0 auto 0;
+		display: flex;
+		justify-content: space-between;
+		// align-items: center;
+	}
 	&__title{
 		color: #003146;
 		font-size: 70px;
 		max-width: 1170px;
 		text-align: center;
 		margin: 0 auto 100px;
-	}
-	&__wrapper {
-		max-width: 1440px;
-		height: 400px;
-		margin: 0 auto 0;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
 	}
 	&__paragraphs-wrapper {
 		width: 50%;
@@ -78,7 +79,7 @@
 	&__graphic{
 		width: 100%;
 		max-height:360px;
-		border-radius: 40px;
+		border-radius: 20px;
 		overflow: hidden;
 	}
 	&__img-active{
@@ -152,7 +153,9 @@
 		&__wrapper {
 			flex-direction: column-reverse;
 			height: auto;
-			padding: 0 20px;
+			padding: 0;
+			max-width: 80%;
+			margin: 0 auto;
 		}
 		&__paragraphs-wrapper {
 			width: auto;
@@ -222,8 +225,14 @@
 	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 	.accordion {
+		&__wrapper{
+			height: auto;
+			padding: 0 20px;
+			max-width: 100%;
+			margin: 0 0;
+		}
 		&__paragraphs-wrapper {
 			width: auto;
 			min-height: 350px;

@@ -1,6 +1,6 @@
 // !Expanding randomname
 
-if (window.innerWidth > 1000) {
+if (window.innerWidth > 1024) {
 	const cards = document.querySelectorAll('.expander__immigration .expander__card');
 	cards.forEach((el) => el.addEventListener('mouseenter', expandCard));
 	cards.forEach((el) => el.addEventListener('mouseleave', defaultCard));
@@ -15,7 +15,7 @@ if (window.innerWidth > 1000) {
 		cards[0].classList.add('expander__card-active');
 	}
 }
-if (window.innerWidth > 1000) {
+if (window.innerWidth > 1024) {
 	const cards = document.querySelectorAll('.expander__relocation .expander__card');
 	cards.forEach((el) => el.addEventListener('mouseenter', expandCard));
 	cards.forEach((el) => el.addEventListener('mouseleave', defaultCard));
@@ -43,19 +43,19 @@ function checkParagraphs() {
 	const scrollTrigger = window.innerHeight;
 	relocationParagraphs.forEach((el) => {
 		const blockTop = accordionRelocation.getBoundingClientRect().top;
-		if (blockTop < (scrollTrigger / 10) * 8) {
+		if (blockTop < (scrollTrigger / 10) * 6) {
 			relocationParagraphs.forEach((el) =>
 				el.classList.remove('accordion__paragraph-active')
 			);
 			relocationParagraphs[0].classList.add('accordion__paragraph-active');
 		}
-		if (blockTop < (scrollTrigger / 10) * 6) {
+		if (blockTop < (scrollTrigger / 10) * 4) {
 			relocationParagraphs.forEach((el) =>
 				el.classList.remove('accordion__paragraph-active')
 			);
 			relocationParagraphs[1].classList.add('accordion__paragraph-active');
 		}
-		if (blockTop < (scrollTrigger / 10) * 4) {
+		if (blockTop < (scrollTrigger / 10) * 2) {
 			relocationParagraphs.forEach((el) =>
 				el.classList.remove('accordion__paragraph-active')
 			);
@@ -64,19 +64,19 @@ function checkParagraphs() {
 	});
 	differencesParagraphs.forEach((el) => {
 		const blockTop = accordionDifferences.getBoundingClientRect().top;
-		if (blockTop < (scrollTrigger / 10) * 8) {
+		if (blockTop < (scrollTrigger / 10) * 6) {
 			differencesParagraphs.forEach((el) =>
 				el.classList.remove('accordion__paragraph-active')
 			);
 			differencesParagraphs[0].classList.add('accordion__paragraph-active');
 		}
-		if (blockTop < (scrollTrigger / 10) * 6) {
+		if (blockTop < (scrollTrigger / 10) * 4) {
 			differencesParagraphs.forEach((el) =>
 				el.classList.remove('accordion__paragraph-active')
 			);
 			differencesParagraphs[1].classList.add('accordion__paragraph-active');
 		}
-		if (blockTop < (scrollTrigger / 10) * 4) {
+		if (blockTop < (scrollTrigger / 10) * 2) {
 			differencesParagraphs.forEach((el) =>
 				el.classList.remove('accordion__paragraph-active')
 			);
@@ -146,7 +146,7 @@ let managersCards = new Swiper(".managers .slider-cards", {
 	loop: false,
 	cardsEffect: {
 		slideShadows: false,
-		perSlideRotate: 6,
+		perSlideRotate: 5,
 		perSlideOffset: 3,
 		
 	},
@@ -177,7 +177,7 @@ let individualsCards = new Swiper(".individuals .slider-cards", {
 	loop: false,
 	cardsEffect: {
 		slideShadows: false,
-		perSlideRotate: 6,
+		perSlideRotate: 5,
 		perSlideOffset: 3,
 	},
 });

@@ -1,8 +1,18 @@
 .slider-info {
+	&__wrapper{
+		height: auto;
+	}
 	&__slide {
+		position: relative;
+		z-index: 999;
 		background-color: #fff;
-		height: 100%;
-		opacity: 0;
+		height: 0px !important;
+		opacity: 0 !important;
+	}
+	&__slide-active{
+		opacity: 1 !important;
+		background-color: #fff !important;
+		height: 100% !important;
 	}
 	&__subtitle {
 		width: 420px;
@@ -21,11 +31,33 @@
 		line-height: 39px;
 		color: #003146;
 	}
-	&__slide-active{
-		opacity: 1 !important;
-		background-color: #fff !important;
+
+
+	&__descr {
+	}
+
+	&__title {
+	}
+
+	&__title-descr {
+	}
+
+	&__list {
+	}
+
+	&__item {
+	}
+
+	&__button {
+		position: relative;
+		margin-top: 30px;
+		cursor: pointer;
+		background-color: #0075BC;
+		width: 270px;
+		height: 58px;
 	}
 }
+
 
 .slider-arrows {
 	position: absolute;
@@ -35,6 +67,7 @@
 	width: 145px;
 	display: flex;
 	justify-content: space-between;
+	user-select: none;
 	&__arrow {
 		width: 60px;
 		height: 60px;
@@ -109,10 +142,10 @@
 		padding-left: 60px;
 	}
 }
+.immigration-process,
 .managers {
 	position: relative;
 	display: flex;
-	max-width: 1164px;
 	height: 500px;
 	margin-left: auto;
 	margin-right: auto;
@@ -131,9 +164,15 @@
 	}
 }
 
+.immigration-process{
+	position: relative;
+	display: flex;
+	height: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 @media (max-width: 1024px) {
-
-
 
 	.slider-cards {
 		width: 240px;
@@ -184,6 +223,7 @@
 			padding-left: 40px;
 		}
 	}
+	
 	.individuals {
 		padding: 0 20px;
 		.slider-cards {
@@ -223,6 +263,10 @@
 			font-size: 18px;
 			line-height: 25px;
 		}
+		&__button {
+			position: relative;
+			bottom: 0;
+		}
 	}
 	.slider-arrows {
 		position: relative;
@@ -230,10 +274,11 @@
 	}
 
 
-
+	.immigration-process,
 	.managers {
 		flex-direction: column-reverse;
 		height: auto;
+		max-width: 100%;
 		padding: 0 20px 0px;
 	}
 	.sliders{
@@ -252,6 +297,8 @@
 		flex-direction: column;
 		height: auto;
 		padding: 0;
+		max-width: 100%;
+		padding: 0 20px 0px;
 		.slider-info {
 			width: 100%;
 			margin: 0;

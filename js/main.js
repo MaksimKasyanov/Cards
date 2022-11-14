@@ -186,3 +186,38 @@ individualsInfo.controller.control = individualsCards;
 individualsCards.controller.control = individualsInfo;
 
 
+// ! Slider immigration-process
+let immigrationProcessInfo = new Swiper(".immigration-process .slider-info", {
+	wrapperClass: 'slider-info__wrapper',
+	slideClass: 'slider-info__slide',
+	slideActiveClass: 'slider-info__slide-active',
+	effect: "fade",
+	loop: false,
+	allowTouchMove: false,
+	navigation: {
+		prevEl: ".immigration-process .slider-arrows__prev",
+		nextEl: ".immigration-process .slider-arrows__next",
+		disabledClass: 'slider-arrows__disabled',
+	},
+});
+
+let immigrationProcessCards = new Swiper(".immigration-process .slider-cards", {
+	wrapperClass: 'slider-cards__wrapper',
+	slideClass: 'slider-cards__slide',
+	effect: "cards",
+	grabCursor: true,
+	loop: false,
+	cardsEffect: {
+		slideShadows: false,
+		perSlideRotate: 5,
+		perSlideOffset: 3,
+	},
+});
+
+immigrationProcessInfo.controller.control = immigrationProcessCards;
+immigrationProcessCards.controller.control = immigrationProcessInfo;
+
+document.querySelector('.slider-info__button').addEventListener('click', () => {
+	console.log('Button clicked')
+})
+
